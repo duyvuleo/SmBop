@@ -120,6 +120,8 @@ def run():
 
     assert not pathlib.Path(f"{prefix}experiments/{experiment_name}").exists()
 
+    pathlib.Path(f"cache").mkdir(exist_ok=True)
+
     # #     sh.ln("-s", f"{prefix}/experiments/{experiment_name}", f"experiments/{experiment_name}")
     #     pathlib.Path(f"backup").mkdir(exist_ok=True)
     #     pathlib.Path(f"cache").mkdir(exist_ok=True)

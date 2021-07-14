@@ -118,17 +118,16 @@ def run():
     # prefix = "/media/disk1/ohadr/"
     prefix = args.prefix
 
-
     assert not pathlib.Path(f"{prefix}experiments/{experiment_name}").exists()
 
-#     sh.ln("-s", f"{prefix}/experiments/{experiment_name}", f"experiments/{experiment_name}")
-    pathlib.Path(f"backup").mkdir(exist_ok=True)
-    pathlib.Path(f"cache").mkdir(exist_ok=True)
-    # pathlib.Path(f"experiments/{experiment_name}").mkdir(exist_ok=True)
-
-    subprocess.check_call(
-        f"git ls-files | tar Tzcf - backup/{experiment_name}.tgz", shell=True
-    )
+    # #     sh.ln("-s", f"{prefix}/experiments/{experiment_name}", f"experiments/{experiment_name}")
+    #     pathlib.Path(f"backup").mkdir(exist_ok=True)
+    #     pathlib.Path(f"cache").mkdir(exist_ok=True)
+    #     # pathlib.Path(f"experiments/{experiment_name}").mkdir(exist_ok=True)
+    #
+    #     subprocess.check_call(
+    #         f"git ls-files | tar Tzcf - backup/{experiment_name}.tgz", shell=True
+    #     )
 
     if args.profile:
         pass

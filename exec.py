@@ -25,6 +25,7 @@ def to_string(value):
 def run():
     parser = argparse.ArgumentParser(allow_abbrev=True)
     parser.add_argument("--name", nargs="?")
+    parser.add_argument("--prefix", type=str, default="/tmp/")
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--gpu", type=str, default="0")
     parser.add_argument("--recover", action="store_true")
@@ -114,7 +115,8 @@ def run():
     )
     prefix = ""
     # prefix = "/home/ohadr/"
-    prefix = "/media/disk1/ohadr/"
+    # prefix = "/media/disk1/ohadr/"
+    prefix = args.prefix
 
 
     assert not pathlib.Path(f"{prefix}experiments/{experiment_name}").exists()
